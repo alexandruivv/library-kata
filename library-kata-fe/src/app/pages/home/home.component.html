@@ -1,0 +1,10 @@
+<app-header/>
+<div class="p-10">
+  @if (user()?.userRole === 'ADMIN') {
+    <app-admin-home />
+  }
+  @if (user()?.userRole === 'USER') {
+    <app-user-home />
+  }
+</div>
+

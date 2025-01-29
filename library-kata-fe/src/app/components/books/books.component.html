@@ -1,0 +1,40 @@
+<table mat-table [dataSource]="books()" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef> Author </th>
+    <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="publicationDate">
+    <th mat-header-cell *matHeaderCellDef> Publication date </th>
+    <td mat-cell *matCellDef="let element"> {{element.publicationDate}} </td>
+  </ng-container>
+
+  @if (bookAction()) {
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      @if (bookAction() === BookAction.BORROW) {
+        <td mat-cell *matCellDef="let element"> <button mat-button (click)="onBorrow(element)">BORROW</button> </td>
+      }
+      @if (bookAction() === BookAction.RETURN) {
+        <td mat-cell *matCellDef="let element"> <button mat-button (click)="onReturn(element)">RETURN</button> </td>
+      }
+    </ng-container>
+  }
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

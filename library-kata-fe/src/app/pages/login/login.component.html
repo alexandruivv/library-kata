@@ -1,0 +1,22 @@
+<div class="py-10 w-6/12 mx-auto text-2xl font-bold">
+
+  <h1 class="text-center mb-10">Library Kata</h1>
+
+  <form class="flex flex-col" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Type the username..." formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Type the password..." type="password" formControlName="password">
+    </mat-form-field>
+
+    <button class="w-4/12 mx-auto" mat-raised-button>Login</button>
+  </form>
+  @if (invalidCredentials) {
+    <p class="font-bold text-center mt-5 text-red-800" >Invalid credentials!</p>
+  }
+
+</div>

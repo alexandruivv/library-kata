@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-5">
+  <h1>My borrowed books</h1>
+  <app-books [books]="myBorrowedBooks()" [bookAction]="BookAction.RETURN" (onReturnBook)="onReturn($event)" />
+
+  <h1>Books to borrow</h1>
+  <app-books [books]="booksToBorrow()" [bookAction]="BookAction.BORROW" (onBorrowBook)="onBorrow($event)" />
+</div>

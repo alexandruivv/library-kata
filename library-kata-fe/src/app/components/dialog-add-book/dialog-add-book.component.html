@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add a book</h2>
+
+<mat-dialog-content class="flex flex-col gap-1">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="data.title"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="data.description"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput [(ngModel)]="data.author"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Publication date</mat-label>
+    <input matInput [(ngModel)]="data.publicationDate" type="date"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</mat-dialog-actions>

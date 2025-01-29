@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-5 w-full">
+  <button mat-fab extended (click)="openAddDialog()">
+    <mat-icon>add</mat-icon>
+    Add a book
+  </button>
+  <app-books [books]="books()"></app-books>
+
+</div>
+

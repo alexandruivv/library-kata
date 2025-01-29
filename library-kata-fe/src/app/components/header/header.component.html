@@ -1,0 +1,7 @@
+<div class="bg-gray-100 shadow w-full flex flex-row gap-10 justify-end p-3 items-center">
+  <h1 class="text-xl">Hello, {{ user()?.firstName }} {{ user()?.lastName }}</h1>
+  <h1 class="text-xl font-bold" [ngClass]="{
+    'text-amber-900': user()?.userRole === 'ADMIN'
+  }">Role: {{ user()?.userRole }}</h1>
+  <button mat-button (click)="onLogout()">Logout</button>
+</div>
